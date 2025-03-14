@@ -40,7 +40,7 @@
 //   });
 // };
 'use strict';
-module.exports = (sequelize, DataTypes) => {
+export default(sequelize, DataTypes) => {
   const Product = sequelize.define('Product', {
     _id: {
       type: DataTypes.STRING,

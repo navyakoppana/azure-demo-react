@@ -65,13 +65,14 @@ color: #555;
 export const ItemDiv = styled.div`
 display: grid;
 grid-template-columns: repeat(4, 1fr);
+width:100%;
 gap: 16px; /* Adjust the gap as needed */
-width: 100%; /* Ensure it takes the full width */
 margin-top:50px;
 
 
 @media(max-width:768px){
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap:0px;
 }
 
 @media(max-width:1440px){
@@ -85,7 +86,7 @@ display: inline-block;
 margin-right:300px;
 
 @media(max-width:768px){
-  margin-right:100px;
+  margin-right:150px;
   margin-top:50px;
 }
 `
@@ -127,8 +128,8 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   padding: 16px;
+  margin: 0 auto;
   background-color: #ffffff; /* Amazon-like clean white background */
 `;
 

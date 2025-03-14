@@ -10,7 +10,27 @@ const StyledFooterDiv =styled.div`
     justify-content:space-around;
     margin-left:20px;
     @media(max-width:768px){
-        margin-left:10px;
+        margin-left:-40px;
+        margin-right:20px;
+    }
+    @media(max-width:390px){
+        margin-left:200px;
+    }
+
+    @media(max-width:430px){
+        margin-left:200px;
+        margin-right:20px;
+    }
+`
+
+const Hr =styled.hr`
+    width:100%;
+    @media(max-width:390px){
+        width:200%;
+    }
+
+    @media(max-width:430px){
+        width:200%;
     }
 `
 const StyledHeading=styled.p`
@@ -27,6 +47,10 @@ const StyledList = styled.ul`
     &: hover{
         text-decoration:underline;     
     }
+    @media(max-width:768px){
+        margin-left:-40px;
+        margin-right:40px;
+    }
 `
 
 const StyledLine = styled.p`
@@ -36,6 +60,13 @@ const StyledLine = styled.p`
     }
     @media(max-width:768px){
         margin-left:200px;
+    }
+    @media(max-width:390px){
+        width:100%;
+    }
+
+    @media(max-width:430px){
+        width:100%;
     }
 `
 
@@ -47,7 +78,7 @@ const Footer = () => {
   };
   return (
     <div>
-        <hr />
+        <Hr />
         <StyledFooterDiv>
             <div>
                 <StyledHeading>SHOP</StyledHeading>
@@ -70,13 +101,13 @@ const Footer = () => {
             <div>
                 <StyledHeading>CONTACT US</StyledHeading>
                 <StyledList>
-                    <li>+1-405-456-7890</li>
-                    <li>contact@westside.com</li>
+                    <li>405-456-7890</li>
+                    <li>contact@ws.com</li>
                 </StyledList>
             </div>
         </StyledFooterDiv>
         <div>
-            <hr />
+            <Hr />
             <StyledLine>Copyright 2024 Westside.-All rights reserved </StyledLine>
         </div>
     </div>

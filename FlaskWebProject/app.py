@@ -39,7 +39,7 @@ class Product(db.Model):
     price = db.Column(db.Numeric(10, 2), nullable=False)
     image = db.Column(db.ARRAY(db.String))
     category = db.Column(db.String(50))
-    subcategory = db.Column(db.String(50))
+    subCategory = db.Column(db.String(50))
     sizes = db.Column(db.ARRAY(db.String))
     bestseller = db.Column(db.Boolean)
 
@@ -51,7 +51,7 @@ class Product(db.Model):
             'price': str(self.price),
             'image': self.image,
             'category': self.category,
-            'subCategory': self.subcategory,
+            'subCategory': self.subCategory,
             'sizes': self.sizes,
             'bestseller': self.bestseller
         }

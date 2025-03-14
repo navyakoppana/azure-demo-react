@@ -8,9 +8,24 @@ import styled from 'styled-components';
 
 const StyledDiv = styled.div`
     @media(max-width:768px){
-        margin-top:-300px;
+        margin-right:100px;
+    }
+
+`
+const GridContainer = styled.div`
+    @media(max-width:1440px){
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        width: 100%;
+    }
+    @media(max-width:768px){
+        grid-template-columns: repeat(2, 1fr);
+        gap:0px;
+        margin-right:50px;
     }
 `
+
 
 const LatestCollection = () => {
   const { products } = useContext(ShopContext);
@@ -30,7 +45,8 @@ const LatestCollection = () => {
         <StyledDiv>
             <Title text1='latest' text2='collections'></Title>
         </StyledDiv>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px", width: "100%"}}>          
+        <GridContainer>
+        {/* <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px", width: "100%"}}>           */}
           {latestProducts.length > 0 ? (
               latestProducts.map((item, index) => (
                   <ProductItem key={index} id={item._id} image={item.image} name={item.name} price={item.price} />
@@ -38,7 +54,7 @@ const LatestCollection = () => {
           ) : (
               <p>No products available</p>
           )}
-         </div> 
+        </GridContainer>
       </div>
   );
 };

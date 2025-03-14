@@ -32,7 +32,7 @@ const NewsLetterBox = () => {
   return (
     <div>
         <div>
-        <Title text1='Join our' text2='newsletter'></Title>
+        <Title text1='Sign Up our' text2='newsletter'></Title>
         </div>
         <div className='newsletter'>
             <p className='newsletter-info'>Get the latest updates from store</p>  

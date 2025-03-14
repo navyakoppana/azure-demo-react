@@ -72,7 +72,7 @@ const Cart = () => {
           })}
       </form>
       <div>
-        <div>
+        <div style={{marginRight:"120px"}}>
           <CartTotalDiv>
             <CartTotal/>
           </CartTotalDiv>

@@ -7,6 +7,12 @@ export const ProductContainer = styled.div`
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+  @media(max-width:390px){
+    margin-left:50px;
+  }
+  @media(max-width:430px){
+    margin-left:50px;
+  }
 `;
 
 export const HeadingContainer = styled.div`
@@ -19,6 +25,9 @@ export const ProductWrapper = styled.div`
   display: flex;
   width: 100%;
   gap: 20px;
+  @media(max-width:768px){
+    margin-right:50px;
+  }
 `;
 
 export const ImageSection = styled.div`
@@ -51,6 +60,12 @@ export const MainImage = styled.img`
   @media(max-width:1440px){
     height:600px;
   }
+  @media(max-width:390px){
+    width:250px;
+  }
+  @media(max-width:430px){
+    width:250px;
+  }
 `;
 
 export const InfoSection = styled.div`
@@ -60,6 +75,12 @@ export const InfoSection = styled.div`
   font-family: "Amazon Ember", Arial, sans-serif;
   font-weight:600;
   color:black;
+  @media(max-width:390px){
+    margin-left:150px;
+  }
+  @media(max-width:430px){
+    margin-left:150px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -67,10 +88,18 @@ export const Title = styled.h1`
   margin-bottom: 10px;
   color:maroon;
   @media(max-width:768px){
-    font-size:25px;
+    font-size:20px;
   }
   @media(max-width:1440px){
     font-size:20px;
+  }
+  @media(max-width:390px){
+    font-size:25px;
+    width:250px;
+  }
+  @media(max-width:430px){
+    font-size:25px;
+    width:250px;
   }
 
 `;
@@ -81,6 +110,7 @@ export const Price = styled.p`
   @media(max-width:768px){
     font-size:20px;
   }
+
 `;
 
 export const Description = styled.p`
@@ -92,11 +122,20 @@ export const Description = styled.p`
   @media(max-width:1440px){
     font-size:18px;
   }
+  @media(max-width:390px){
+    font-size:18px;
+    width:250px;
+  }
+  @media(max-width:430px){
+    font-size:18px;
+    width:250px;
+  }
 `;
 
 export const SizeSelector = styled.div`
   margin: 20px 0;
   font-weight:400;
+ 
 `;
 
 export const SizeButtons = styled.div`
@@ -136,11 +175,27 @@ export const AddToCartButton = styled.button`
 
 export const Hr = styled.hr`
   margin: 20px 0;
+  @media(max-width:390px){
+    width:100%;
+    
+  }
+  @media(max-width:430px){
+    width:100%;
+    margin-left:50px;
+  }
 `;
 
 export const ShippingInfo = styled.div`
   display: flex;
   gap: 20px;
+
+  @media(max-width:390px){
+    gap:10px;
+  }
+  @media(max-width:430px){
+    gap:10px;
+    
+  }
 `;
 
 export const ShippingItem = styled.div`

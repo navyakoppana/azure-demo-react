@@ -12,6 +12,14 @@ const Maindiv = styled.div`
     @media(max-width:768px){
         margin-right:500px; 
     }
+    @media(max-width:390px){
+        width:200px;
+    }
+    @media(max-width:430px){
+        margin-left:280px;
+        width:200px;
+    }
+    
     
 `
 
@@ -19,6 +27,9 @@ const RelatedProductsDiv = styled.div`
     display:flex;
     width:100%
     height:auto;
+    @media(max-width:430px){
+        margin-left:280px;
+    }
 `
 
 const RelatedProducts = ({category,subCategory,currentProductId}) => {

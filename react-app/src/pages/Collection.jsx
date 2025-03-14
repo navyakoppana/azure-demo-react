@@ -153,11 +153,11 @@ const Collection = () => {
             </SortDiv>
           </HeaderContainer>
           <ItemDiv>
-          {
-            filterProducts.map((item,index) =>(
-              <ProductItem key={index} name={item.name} id={item._id} image={item.image} price={item.price}/>
-            ))
-          }
+            {
+              filterProducts.map((item,index) =>(
+                <ProductItem key={index} name={item.name} id={item._id} image={item.image} price={item.price}/>
+              ))
+            }
           </ItemDiv>
         </Container>  
       </CombinedDiv>

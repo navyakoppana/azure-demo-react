@@ -17,6 +17,9 @@ export const Heading = styled.div`
     font-family: "Amazon Ember", Arial, sans-serif;
     font-weight:600;
     font-size:22px;
+    @media(max-width:768px){
+        width:200px;
+    }
 
 `
 export const AmountInfo = styled.div`

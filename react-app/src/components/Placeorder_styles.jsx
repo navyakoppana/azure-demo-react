@@ -6,6 +6,7 @@ export const MainForm = styled.form`
     justify-content: space-between;
     font-family: "Amazon Ember", Arial, sans-serif;
     font-weight:600;
+    width:100%;
     margin-bottom: 50px;
     padding: 20px;
     background: #fff;
@@ -20,6 +21,17 @@ export const MainForm = styled.form`
     @media (max-width: 1440px) {
         margin-top: -50px;
     }
+    @media (max-width: 390px) {
+        flex-direction: column;
+        gap: 20px;
+        padding-right:300px;
+    }
+    @media (max-width: 430px) {
+        flex-direction: column;
+        gap: 20px;
+        padding-right:300px;
+    }
+
 `;
 
 export const LeftDiv = styled.div`
@@ -30,6 +42,14 @@ export const LeftDiv = styled.div`
     margin-top: 50px;
 
     @media (max-width: 768px) {
+        width: 100%;
+        margin-top: 30px;
+    }
+    @media (max-width: 430px) {
+        width: 100%;
+        margin-top: 30px;
+    }
+    @media (max-width: 390px) {
         width: 100%;
         margin-top: 30px;
     }
@@ -131,6 +151,14 @@ export const RightDiv = styled.div`
     }
     @media (max-width: 1440px) {
         margin-top: 60px;
+    }
+    @media (max-width: 390px) {
+        width: 100%;
+        margin-top: 30px;
+    }
+    @media (max-width: 430px) {
+        width: 100%;
+        margin-top: 30px;
     }
 
 `;
