@@ -25,22 +25,51 @@ const ShopContextProvider = (props) => {
 
     useEffect(() => {
         // Fetch products from the API
+        // const fetchProducts = async () => {
+        //     try {
+        //         const response = await fetch('http://localhost:5434/api/products');
+        //         if (!response.ok) {
+        //             throw new Error('Network response was not ok');
+        //         }
+        //         const data = await response.json();
+        //         // Map image names to actual imports
+        //         const mappedProducts = data.map(product => ({
+        //             ...product,
+        //             image: product.image.map(imgName => images[imgName])
+        //         }));
+        //         setProducts(mappedProducts);
+        //     } catch (error) {
+        //         console.error('Failed to fetch products:', error);
+        //     }
+        // };
+        // Use Azure Static Web Apps API URL
+        const API_BASE_URL = process.env.REACT_APP_API_URL || "https://your-app-name.azurestaticapps.net/api";
+    
         const fetchProducts = async () => {
-            try {
-                const response = await fetch('http://localhost:5434/api/products');
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const data = await response.json();
-                // Map image names to actual imports
-                const mappedProducts = data.map(product => ({
-                    ...product,
-                    image: product.image.map(imgName => images[imgName])
-                }));
-                setProducts(mappedProducts);
-            } catch (error) {
-                console.error('Failed to fetch products:', error);
+          try {
+            const response = await fetch(`${API_BASE_URL}/products`, {
+              headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+              },
+            });
+    
+            if (!response.ok) {
+              throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);
             }
+    
+            const data = await response.json();
+    
+            const mappedProducts = data.map((product) => ({
+              ...product,
+              image: product.image.map((imgName) => images[imgName] || "/placeholder.png"),
+            }));
+    
+            setProducts(mappedProducts);
+            console.log("Fetched Products:", mappedProducts);
+          } catch (error) {
+            console.error("Failed to fetch products:", error);
+          }
         };
 
         fetchProducts();
