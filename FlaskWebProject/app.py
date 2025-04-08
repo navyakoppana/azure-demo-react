@@ -8,7 +8,18 @@ import os
 
 # Initialize Flask app
 app = Flask(__name__)
-CORS(app,resources={r"/*": {"origins": "*"}})
+CORS(app,resources={r"/*": {"origins": "*"}},supports_credentials=True)
+@app.after_request
+def add_cors_headers(response):
+    response.headers["Access-Control-Allow-Origin"] = "https://lively-mud-097c31c10.6.azurestaticapps.net"
+    response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+    return response
+
+# Handle preflight requests to prevent browser blocking
+@app.route('/api/products', methods=['OPTIONS'])
+def handle_options():
+    return '', 204
 # Configure PostgreSQL connection
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgreSQL2025@psql-db:5432/ecommerce'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://{username}:{password}@{host}:{port}/{database}'.format(
